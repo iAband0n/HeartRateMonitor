@@ -1,0 +1,17 @@
+﻿心率悬浮窗安装包
+
+1. 双击 release\心率悬浮窗安装程序.exe。
+2. 点击“浏览…”选择父目录，安装器会自动创建 `HeartRateMonitor` 子目录。
+   例如选择 `D:\Program Files`，最终安装目录为 `D:\Program Files\HeartRateMonitor`。
+   默认目录为 `%LOCALAPPDATA%\Programs\HeartRateMonitor`。
+3. 点击“安装”。安装器会请求管理员权限，解压完整运行文件，并在桌面创建“心率悬浮窗.lnk”。
+4. 之后从桌面快捷方式启动。配置、历史记录和日志保存在安装目录的 cache 文件夹，
+   不再使用 %LOCALAPPDATA%\HeartRateOverlay 的旧目录。安装信息会注册到 Windows“已安装的应用”，安装目录内提供 uninstall.exe。
+
+卸载方式：Windows“设置 → 应用 → 已安装的应用”，或直接运行安装目录内的 `uninstall.exe`。
+
+构建安装包（先准备 build_single\payload.zip）：
+   .\tools\build_installer.ps1
+
+安装包仍是本地未签名程序；若 Windows 显示“未知发布者”，需要使用可信代码签名证书签名。
+

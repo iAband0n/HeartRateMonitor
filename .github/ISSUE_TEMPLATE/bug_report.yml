@@ -1,0 +1,57 @@
+name: Bug report
+description: 报告一个可复现的问题
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请先确认使用的是最新 Release 中的便携文件夹版，并保留 `_internal` 目录。
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      placeholder: v1.0.0
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows 版本
+      placeholder: Windows 11 23H2 x64
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: 手环 / 手表型号
+      placeholder: 例如 Mi Band 8
+    validations:
+      required: false
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: 1. 打开程序；2. 点击选择设备；3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果 / 报错截图
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志（可选）
+      description: 可粘贴 %APPDATA%\HeartRateOverlay\app.log 的相关部分
+      render: text
+    validations:
+      required: false

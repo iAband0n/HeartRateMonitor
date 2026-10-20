@@ -1,0 +1,2 @@
+PySide6-Essentials==6.9.3
+bleak==1.1.1

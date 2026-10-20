@@ -1,0 +1,29 @@
+.venv/
+__pycache__/
+*.py[cod]
+build/
+build_*/
+build_single/
+dist/
+dist_*/
+.localdata/
+.localdata*/
+release-package/
+HeartRateMonitor-main/
+*.log
+run_tmp*/
+run_verify*/
+verify_*/
+inspect_*/
+rebuild_*/
+
+# Keep README screenshots; ignore only generated previews.
+screenshots/demo*/
+screenshots/dialogs*/
+screenshots/onefile/
+screenshots/onedir/
+
+# Release binaries are uploaded to GitHub Releases, not committed.
+release/_internal/
+release/*.exe
+release/*.zip
