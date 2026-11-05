@@ -144,7 +144,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 
 # 1) 构建 onedir 运行时
-.\.venv\Scripts\python.exe -m PyInstaller --noconfirm --clean HeartRateOverlay_onedir.spec
+.\.venv\Scripts\python.exe -m PyInstaller --noconfirm --clean --distpath dist_onedir HeartRateOverlay_onedir.spec
 
 # 2) 封装成单文件 exe（输出到 release\心率悬浮窗.exe）
 powershell -ExecutionPolicy Bypass -File tools\build_single_exe.ps1 `

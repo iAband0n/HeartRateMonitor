@@ -32,7 +32,7 @@ if (-not $SkipBuild -and -not $ExistingPayload) {
         throw "找不到 $Python，请先创建 .venv 并安装 requirements-dev.txt"
     }
     Write-Host "Building onedir payload ..."
-    & $Python -m PyInstaller --noconfirm --clean HeartRateOverlay_onedir.spec
+    & $Python -m PyInstaller --noconfirm --clean --distpath dist_onedir HeartRateOverlay_onedir.spec
     if ($LASTEXITCODE -ne 0) { throw "PyInstaller failed" }
 }
 
