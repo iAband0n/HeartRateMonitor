@@ -347,7 +347,15 @@ class MainWindow(QMainWindow):
                 icon=draw_app_icon(128),
             )
         )
-        self.right_stack.addWidget(self._build_detail_page())
+        detail_scroll = QScrollArea()
+        detail_scroll.setObjectName("DetailScrollArea")
+        detail_scroll.setWidgetResizable(True)
+        detail_scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        detail_scroll.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        detail_scroll.setFrameShape(QFrame.NoFrame)
+        detail_scroll.setWidget(self._build_detail_page())
+        self.detail_scroll_area = detail_scroll
+        self.right_stack.addWidget(detail_scroll)
         self.right_stack.addWidget(self._build_multi_page())
         layout.addWidget(self.right_stack, 1)
         return panel
@@ -484,6 +492,7 @@ class MainWindow(QMainWindow):
         self.stat_avg = StatTile("平均")
         self.stat_max = StatTile("最高")
         self.stat_count = StatTile("采样", unit="个")
+        self.stat_count.setToolTip("最近 5 分钟内收到的心率读数条数；图表显示最近 3 分钟。")
         for tile in (self.stat_min, self.stat_avg, self.stat_max, self.stat_count):
             stats.addWidget(tile)
         live.addLayout(stats)

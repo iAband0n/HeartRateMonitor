@@ -59,6 +59,17 @@ class AppFlowTests(unittest.TestCase):
         window._set_multi_view(False)
         QTest.qWait(100)
         self.assertEqual(window.right_stack.currentIndex(), 1)
+        window.resize(1100, 660)
+        QTest.qWait(100)
+        detail_page = window.detail_scroll_area.widget()
+        self.assertGreater(
+            detail_page.height(), window.detail_scroll_area.viewport().height()
+        )
+        curve_bottom = window.live_chart.mapTo(
+            detail_page, window.live_chart.rect().bottomLeft()
+        ).y()
+        stats_top = window.stat_min.mapTo(detail_page, window.stat_min.rect().topLeft()).y()
+        self.assertLess(curve_bottom, stats_top)
         window._set_multi_view(True)
         QTest.qWait(100)
         self.assertEqual(window.right_stack.currentIndex(), 2)
