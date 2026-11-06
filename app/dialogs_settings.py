@@ -214,13 +214,16 @@ class SettingsDialog(QDialog):
         desc.setWordWrap(True)
         desc.setProperty("role", "muted")
         layout.addWidget(desc)
-        ref = QLabel(
-            '<a href="https://github.com/ccc007ccc/HeartRateMonitor" '
-            'style="color:#FF5C77; text-decoration:none;">参考项目：ccc007ccc/HeartRateMonitor</a>'
+        project_links = QLabel(
+            '<a href="https://github.com/iAband0n/HeartRateMonitor" '
+            'style="color:#FF5C77; text-decoration:none;">项目地址</a>'
+            '　·　'
+            '<a href="https://github.com/iAband0n" '
+            'style="color:#FF5C77; text-decoration:none;">主页</a>'
         )
-        ref.setAlignment(Qt.AlignCenter)
-        ref.setOpenExternalLinks(True)
-        layout.addWidget(ref)
+        project_links.setAlignment(Qt.AlignCenter)
+        project_links.setOpenExternalLinks(True)
+        layout.addWidget(project_links)
         layout.addSpacing(8)
         tip = QLabel(
             "使用提示\n"

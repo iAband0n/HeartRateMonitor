@@ -191,7 +191,7 @@ namespace HeartRateOverlayInstaller
                 if (key == null) throw new InvalidOperationException("无法注册卸载信息。");
                 string uninstall = Path.Combine(target, "uninstall.exe");
                 key.SetValue("DisplayName", "心率悬浮窗");
-                key.SetValue("DisplayVersion", "1.0.0");
+                key.SetValue("DisplayVersion", "1.1.0");
                 key.SetValue("Publisher", "W's Thing");
                 key.SetValue("InstallLocation", target);
                 key.SetValue("UninstallString", "\"" + uninstall + "\"");

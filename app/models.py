@@ -15,7 +15,7 @@ from typing import Any
 
 APP_NAME = "HeartRateOverlay"
 APP_DISPLAY_NAME = "心率悬浮窗"
-APP_VERSION = "1.0.0"
+APP_VERSION = "1.1.0"
 CONFIG_VERSION = 1
 
 DEFAULT_TEMPLATE = "❤{bpm}"

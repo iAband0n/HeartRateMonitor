@@ -10,14 +10,14 @@ using System.Windows.Forms;
 [assembly: AssemblyDescription("HeartRateOverlay single-file launcher")]
 [assembly: AssemblyProduct("心率悬浮窗")]
 [assembly: AssemblyCompany("W's Thing")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]
 
 namespace HeartRateOverlayLauncher
 {
     internal static class Program
     {
-        private const string AppVersion = "1.0.0";
+        private const string AppVersion = "1.1.0";
         private const string PayloadResource = "payload.zip";
         private const string LauncherTitle = "心率悬浮窗";
 

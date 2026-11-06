@@ -4,16 +4,16 @@
 
     原理：把 onedir 的 exe + _internal 压缩成 payload.zip，作为 .NET 资源嵌入
     一个很小的 C# 启动器。启动器首次运行时把 payload 解压到
-    %LOCALAPPDATA%\HeartRateOverlay\runtime\v1.0.0，然后启动主程序。
+    %LOCALAPPDATA%\HeartRateOverlay\runtime\v1.1.0，然后启动主程序。
     这样不依赖 PyInstaller 的 onefile 临时解包逻辑，也不会出现
     "Could not create temporary directory!"。
 
     用法：
-      .\tools\build_single_exe.ps1 -Version 1.0.0
+      .\tools\build_single_exe.ps1 -Version 1.1.0
       .\tools\build_single_exe.ps1 -SkipBuild -SourceDir release
 #>
 param(
-    [string]$Version = "1.0.0",
+    [string]$Version = "1.1.0",
     [string]$SourceDir = "dist_onedir\HeartRateOverlay",
     [string]$Output = "release\心率悬浮窗.exe",
     [string]$ExistingPayload = "",

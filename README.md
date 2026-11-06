@@ -1,4 +1,4 @@
-﻿# 心率悬浮窗 · HeartRate Overlay
+# 心率悬浮窗 · HeartRate Overlay
 
 一个面向 Windows 的桌面心率显示工具：通过低功耗蓝牙（BLE）读取手环 / 手表 / 心率带的
 标准心率服务，把心率显示在可自由定制、始终置顶、可锁定点击穿透的悬浮窗中。
@@ -209,29 +209,6 @@ release/             最终 exe 与安装程序（二进制，不提交 git）
 - 未做代码签名，SmartScreen 可能提示未知发布者。
 - 安装程序未做代码签名，SmartScreen 可能提示未知发布者。
 - 心率数据仅供参考，不构成医疗建议。
-
-## GitHub 发布
-
-仓库已经按 GitHub Release 的形式准备好：
-
-- `release/心率悬浮窗安装程序.exe`：推荐发布文件，负责安装、创建桌面快捷方式和安装目录缓存；
-- `release/心率悬浮窗.exe`：免安装备用版本；
-- `docs/SHA256SUMS.txt`：发布文件校验值；
-- `docs/RELEASE_NOTES.md`：可直接粘贴到 GitHub Release 的说明；
-- `.github/workflows/build.yml`：推送 `v*` 标签时自动测试、构建发布文件并创建 Release；
-- `LICENSE`、`CHANGELOG.md`、`.gitattributes`、`.gitignore` 已补齐。
-
-发布步骤：
-
-```powershell
-git tag v1.0.0
-git push origin v1.0.0
-```
-
-GitHub Actions 会自动构建安装程序和免安装版并附加到 Release。
-也可以手动在 GitHub 页面新建 Release，上传 `release/心率悬浮窗安装程序.exe`、
-`release/心率悬浮窗.exe` 和
-`docs/SHA256SUMS.txt`。
 
 ## License
 
